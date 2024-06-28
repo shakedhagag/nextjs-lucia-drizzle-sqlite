@@ -3,7 +3,10 @@ import { assertAuthenticated } from "@/lib/session";
 import { createServerActionProcedure } from "zsa";
 
 export class ActionError extends Error {
-  constructor(message: string, public code: string) {
+  constructor(
+    message: string,
+    public code: string,
+  ) {
     super(message);
   }
 }
@@ -23,6 +26,8 @@ function shapeErrors({ err }: any) {
   }
 }
 
+// ZSA Custom errors are currently experimental:
+// https://zsa.vercel.app/docs/shape-errors
 export const authenticatedAction = createServerActionProcedure()
   .experimental_shapeError(shapeErrors)
   .handler(async () => {
