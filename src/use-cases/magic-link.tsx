@@ -1,9 +1,9 @@
-import { applicationName } from "@/lib/app-config";
+import { applicationName } from "@/app-config";
 import {
   deleteMagicToken,
   getMagicLinkByToken,
   upsertMagicLink,
-} from "@/lib/data-access/magic-links";
+} from "@/data-access/magic-links";
 // import { createProfile } from "@/data-access/profiles";
 // import {
 //   createMagicUser,

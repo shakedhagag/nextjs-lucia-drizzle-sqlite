@@ -1,12 +1,9 @@
-import { env } from "@/lib/env";
-import { assertAuthenticated } from "@/lib/lib/session";
+import { env } from "@/env";
+import { assertAuthenticated } from "@/lib/session";
 import { createServerActionProcedure } from "zsa";
 
 export class ActionError extends Error {
-  constructor(
-    message: string,
-    public code: string,
-  ) {
+  constructor(message: string, public code: string) {
     super(message);
   }
 }

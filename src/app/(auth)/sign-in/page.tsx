@@ -1,8 +1,8 @@
 "use client";
 
 import { Button, buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils/utils";
-import { btnStyles } from "@/lib/styles/icons";
+import { cn } from "@/utils/utils";
+import { btnStyles } from "@/styles/icons";
 import { Mail } from "lucide-react";
 import Link from "next/link";
 import { MagicLinkForm } from "./magic-link-form";
@@ -24,7 +24,7 @@ export default function SignInPage() {
               buttonVariants({
                 variant: "secondary",
               }),
-              "w-full",
+              "w-full"
             )}
           >
             <ChromeIcon className="mr-2 h-5 w-5" />
@@ -36,7 +36,7 @@ export default function SignInPage() {
               buttonVariants({
                 variant: "secondary",
               }),
-              "w-full",
+              "w-full"
             )}
           >
             <GithubIcon className="mr-2 h-5 w-5" />

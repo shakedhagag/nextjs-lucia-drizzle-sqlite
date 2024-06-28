@@ -2,7 +2,7 @@ import { Lucia } from "lucia";
 import { db } from "./db/index";
 import { sessions, users } from "./db/schema";
 import { DrizzleSQLiteAdapter } from "@lucia-auth/adapter-drizzle";
-import { UserId as CustomUserId } from "@/lib/types/";
+import { UserId as CustomUserId } from "@/types";
 import { cookies } from "next/headers";
 import { Session, User } from "lucia";
 
@@ -42,7 +42,7 @@ export const validateRequest = async (): Promise<
       cookies().set(
         sessionCookie.name,
         sessionCookie.value,
-        sessionCookie.attributes,
+        sessionCookie.attributes
       );
     }
     if (!result.session) {
@@ -50,7 +50,7 @@ export const validateRequest = async (): Promise<
       cookies().set(
         sessionCookie.name,
         sessionCookie.value,
-        sessionCookie.attributes,
+        sessionCookie.attributes
       );
     }
   } catch {}

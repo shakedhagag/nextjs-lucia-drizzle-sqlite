@@ -1,5 +1,5 @@
 import "server-only";
-import { validateRequest } from "@/lib/auth";
+import { validateRequest } from "@/auth";
 import { cache } from "react";
 import { AuthenticationError } from "./errors";
 
