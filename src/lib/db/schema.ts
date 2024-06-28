@@ -17,4 +17,11 @@ export const sessions = sqliteTable("session", {
   expiresAt: integer("expires_at").notNull(),
 });
 
+export const magicLinks = sqliteTable("magic_links", {
+  id: integer("id", { mode: "number" }).primaryKey({ autoIncrement: true }),
+  email: text("email").notNull().unique(),
+  token: text("token"),
+  tokenExpiresAt: integer("token_expires_at", { mode: "timestamp" }).notNull(),
+});
+
 export type User = typeof users.$inferSelect;
