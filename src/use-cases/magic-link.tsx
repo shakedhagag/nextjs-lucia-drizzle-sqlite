@@ -10,20 +10,20 @@ import {
 //   getUserByEmail,
 //   setEmailVerified,
 // } from "@/data-access/users";
-// import { MagicLinkEmail } from "@/emails/magic-link";
-// import { sendEmail } from "@/lib/email";
+import { MagicLinkEmail } from "@/emails/magic-link";
+import { sendEmail } from "@/lib/email";
 // import { generateRandomName } from "@/lib/names";
 // import { animals, colors, uniqueNamesGenerator } from "unique-names-generator";
 //
-// export async function sendMagicLinkUseCase(email: string) {
-//   const token = await upsertMagicLink(email);
-//
-//   await sendEmail(
-//     email,
-//     `Your magic login link for ${applicationName}`,
-//     <MagicLinkEmail token={token} />,
-//   );
-// }
+export async function sendMagicLinkUseCase(email: string) {
+  const token = await upsertMagicLink(email);
+
+  await sendEmail(
+    email,
+    `Your magic login link for ${applicationName}`,
+    <MagicLinkEmail token={token} />,
+  );
+}
 
 export async function loginWithMagicLinkUseCase(token: string) {
   console.log("----");
