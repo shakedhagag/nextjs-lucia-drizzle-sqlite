@@ -83,7 +83,9 @@ export async function registerUserUseCase(email: string, password: string) {
 export async function signInUseCase(email: string, password: string) {
   const user = await getUserByEmail(email);
 
+  console.log(user);
   if (!user) {
+    console.log("errrrr");
     throw new LoginError();
   }
 
