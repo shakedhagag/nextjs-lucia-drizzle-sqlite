@@ -8,6 +8,10 @@ export const AuthenticationError = class AuthenticationError extends Error {
   }
 };
 
+/**
+ * A custom rate limit error to throw
+ * when the rate limit is exceeded
+ * */
 export class RateLimitError extends Error {
   constructor() {
     super("Rate limit exceeded");
