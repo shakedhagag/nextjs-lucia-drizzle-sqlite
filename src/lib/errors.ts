@@ -7,3 +7,10 @@ export const AuthenticationError = class AuthenticationError extends Error {
     this.name = "AuthenticationError";
   }
 };
+
+export class RateLimitError extends Error {
+  constructor() {
+    super("Rate limit exceeded");
+    this.name = "RateLimitError";
+  }
+}
