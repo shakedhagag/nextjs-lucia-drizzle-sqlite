@@ -46,7 +46,7 @@ export function MagicLinkEmail({ token }: { token: string }) {
 
                 <Text className="text-black font-medium text-[14px] leading-[24px]">
                   <Link
-                    href={`${BASE_URL}/api/login/magic?token=${token}`}
+                    href={`${BASE_URL}/api/sign-in/magic?token=${token}`}
                     target="_blank"
                     className="text-[#2754C5] underline"
                   >

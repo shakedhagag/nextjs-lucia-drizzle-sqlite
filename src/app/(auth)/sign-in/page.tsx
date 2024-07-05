@@ -19,24 +19,24 @@ export default function SignInPage() {
         </div>
         <div className="space-y-4">
           <Link
-            href="/api/login/google"
+            href="/api/sign-in/google"
             className={cn(
               buttonVariants({
                 variant: "secondary",
               }),
-              "w-full"
+              "w-full",
             )}
           >
             <ChromeIcon className="mr-2 h-5 w-5" />
             Sign in with Google
           </Link>
           <Link
-            href="/api/login/github"
+            href="/api/sign-in/github"
             className={cn(
               buttonVariants({
                 variant: "secondary",
               }),
-              "w-full"
+              "w-full",
             )}
           >
             <GithubIcon className="mr-2 h-5 w-5" />
