@@ -22,6 +22,9 @@ export const lucia = new Lucia(adapter, {
   },
 });
 
+/**
+ *
+ * **/
 export const validateRequest = async (): Promise<
   { user: User; session: Session } | { user: null; session: null }
 > => {
@@ -42,7 +45,7 @@ export const validateRequest = async (): Promise<
       cookies().set(
         sessionCookie.name,
         sessionCookie.value,
-        sessionCookie.attributes
+        sessionCookie.attributes,
       );
     }
     if (!result.session) {
@@ -50,7 +53,7 @@ export const validateRequest = async (): Promise<
       cookies().set(
         sessionCookie.name,
         sessionCookie.value,
-        sessionCookie.attributes
+        sessionCookie.attributes,
       );
     }
   } catch {}
