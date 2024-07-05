@@ -1,4 +1,3 @@
-import { profile } from "console";
 import { sqliteTable, text, integer } from "drizzle-orm/sqlite-core";
 
 export const users = sqliteTable("user", {
@@ -50,6 +49,26 @@ export const profiles = sqliteTable("profile", {
   imageId: text("image_id"),
   image: text("image"),
   bio: text("bio").notNull().default(""),
+});
+
+export const verifyEmailTokens = sqliteTable("verify_email_tokens", {
+  id: integer("id", { mode: "number" }).primaryKey({ autoIncrement: true }),
+  userId: integer("user_id", { mode: "number" })
+    .references(() => users.id, { onDelete: "cascade" })
+    .unique()
+    .notNull(),
+  token: text("token"),
+  tokenExpiresAt: integer("token_expires_at", { mode: "timestamp" }).notNull(),
+});
+
+export const resetTokens = sqliteTable("reset_tokens", {
+  id: integer("id", { mode: "number" }).primaryKey({ autoIncrement: true }),
+  userId: integer("user_id", { mode: "number" })
+    .references(() => users.id, { onDelete: "cascade" })
+    .unique()
+    .notNull(),
+  token: text("token"),
+  tokenExpiresAt: integer("token_expires_at", { mode: "timestamp" }).notNull(),
 });
 
 export type User = typeof users.$inferSelect;
